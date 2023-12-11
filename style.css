@@ -77,3 +77,23 @@ input{
     color: white;
     cursor: pointer;
 }
+
+#mensajes{
+    width: 280px;
+    background: #eeeeee84;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#boton-reiniciar{
+    border: transparent;
+    color: #11468f;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 8px;
+    box-sizing: border-box;
+}
