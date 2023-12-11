@@ -1,5 +1,7 @@
-let ataqueJugador
-let ataqueEnemigo
+let ataqueJugador;
+let ataqueEnemigo;
+let vidasJugador = 3;
+let vidasEnemigo = 3;
 
 function iniciarJuego(){
     let botonMascotaJugador = document.querySelector("#boton-mascota");
@@ -73,13 +75,71 @@ function ataqueAleatorioEnemigo(){
 
     if (ataqueAleatorio === 1){
         ataqueEnemigo = 'Fuego';
-    }else if(ataqueAleatorio == 2){
+    }else if(ataqueAleatorio === 2){
         ataqueEnemigo = 'Agua';
     }else{
         ataqueEnemigo = 'Tierra';
     };
+    combate();
 };
 
+
+function combate(){
+    let spanVidasJugador = document.getElementById('vidas-jugador');
+    let spanVidasEnemigo = document.getElementById('vidas-enemigo');
+
+    if(ataqueEnemigo == ataqueJugador){
+        crearMensaje('Empate');
+    }else if(ataqueJugador == 'Fuego' && ataqueEnemigo == 'Tierra'){
+        crearMensaje('Ganaste');
+        vidasEnemigo--;
+        spanVidasEnemigo.innerText = vidasEnemigo;
+    }else if(ataqueJugador == 'Agua' && ataqueEnemigo == 'Fuego'){
+        crearMensaje('Ganaste');
+        vidasEnemigo--;
+        spanVidasEnemigo.innerText = vidasEnemigo;
+    }else if(ataqueJugador == 'Tierra' && ataqueEnemigo == 'Agua'){
+        crearMensaje('Ganaste');
+        vidasEnemigo--;
+        spanVidasEnemigo.innerText = vidasEnemigo;
+    }else{
+        crearMensaje('Perdiste');
+        vidasJugador--;
+        spanVidasJugador.innerText = vidasJugador;
+    };
+
+    //revisar las vidas
+    revisarVidas();
+};
+
+
+function revisarVidas(){
+    if(vidasEnemigo === 0){
+        crearMensajeFinal('Felicitaciones, Ganaste');
+    }else if(vidasJugador == 0){
+        crearMensajeFinal('Lo siento, perdiste');
+    };
+};
+
+
+function crearMensaje(resultado){
+    let sectionMensajes = document.getElementById('mensajes');
+
+    let parrafo = document.createElement('p');
+    parrafo.innerText = 'Tu mascota ataco con ' + ataqueJugador + ' y la mascota del enemigo ataco con ' + ataqueEnemigo + ' - ' + resultado;
+
+    sectionMensajes.appendChild(parrafo);
+}
+
+
+function crearMensajeFinal(resultadoFinal){
+    let sectionMensajes = document.getElementById('mensajes');
+
+    let parrafo = document.createElement('p');
+    parrafo.innerText = resultadoFinal;
+
+    sectionMensajes.appendChild(parrafo);
+};
 
 function aleatorio(min,max){
     return Math.floor(Math.random() * (max - min + 1) + min);
