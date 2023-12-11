@@ -8,13 +8,16 @@ function iniciarJuego(){
     botonMascotaJugador.addEventListener('click',seleccionarMascotaJugador); 
 
     let botonFuego = document.getElementById('boton-fuego');
-    botonFuego.addEventListener('click',ataqueFuego)
+    botonFuego.addEventListener('click',ataqueFuego);
     
     let botonAgua = document.getElementById('boton-agua');
     botonAgua.addEventListener('click',ataqueAgua);
 
     let botonTierra = document.getElementById('boton-tierra');
     botonTierra.addEventListener('click',ataqueTierra);
+
+    let botonReiniciar = document.getElementById('boton-reiniciar');
+    botonReiniciar.addEventListener('click', reiniciarJuego);
 };
 
 
@@ -139,7 +142,22 @@ function crearMensajeFinal(resultadoFinal){
     parrafo.innerText = resultadoFinal;
 
     sectionMensajes.appendChild(parrafo);
+
+    let botonFuego = document.getElementById('boton-fuego');
+    botonFuego.disabled = true;
+    
+    let botonAgua = document.getElementById('boton-agua');
+    botonAgua.disabled = true;
+
+    let botonTierra = document.getElementById('boton-tierra');
+    botonTierra.disabled = true;
 };
+
+
+function reiniciarJuego(){
+    location.reload();
+};
+
 
 function aleatorio(min,max){
     return Math.floor(Math.random() * (max - min + 1) + min);
