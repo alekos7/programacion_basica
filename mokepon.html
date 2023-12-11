@@ -15,19 +15,19 @@
         <div class="tarjetas">
             <label class="tarjeta-de-mokepon" for="hipodoge">
                 <p>Hipodoge</p>
-                <img src="" alt="hipodoge">
+                <img src="./assets/hipodoge.png" alt="hipodoge">
             </label>
             <input type="radio" name="mascota" id="hipodoge"/>
     
             <label class="tarjeta-de-mokepon" for="capipepo">
                 <p>Capipepo</p>
-                <img src="" alt="capipepo">
+                <img src="./assets/capipepos.png" alt="capipepo">
             </label>
             <input type="radio" name="mascota" id="capipepo"/>
     
             <label class="tarjeta-de-mokepon" for="ratigueya">
                 <p>Ratigueya</p>
-                <img src="" alt="ratigueya">
+                <img src="./assets/ratigueya.png" alt="ratigueya">
             </label>
             <input type="radio" name="mascota" id="ratigueya"/>
         </div>
@@ -39,21 +39,28 @@
         <h1 class="titulo">Mokepon🔥💧🌄</h1>
 
         <h2>Elige tu ataque:</h2>
-        <p>Tu mascota <span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
-        <p>La mascota <span id="mascota-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
-        <p>
+        <div>
             <button id="boton-fuego">Fuego🔥</button>
             <button id="boton-agua">Agua💧</button>
             <button id="boton-tierra">Tierra🌄</button>
-        </p>
+        </div>
+
+        <div>
+            <section id="mensajes">
+            </section>
+        
+            <section id="reiniciar">
+                <button id="boton-reiniciar">Reiniciar</button>
+            </section>
+        </div>
+
+        <div>
+            <p>Tu mascota <span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
+            <p>La mascota <span id="mascota-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
+        </div>
     </section>
     
-    <section id="mensajes">
-    </section>
 
-    <section id="reiniciar">
-        <button id="boton-reiniciar">Reiniciar</button>
-    </section>
 
 </body>
 </html>
