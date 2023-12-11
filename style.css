@@ -24,13 +24,13 @@ body{
     font-size: 20px
 }
 
-.tarjetas{
+.tarjetas, .tarjetas-ataques{
     display: flex;
     gap: 10px;
 }
 
 .tarjeta-de-mokepon{
-    width: 100px;
+    width: 180px;
     height: 100px;
     background: #11468f;
     padding: 10px;
@@ -59,4 +59,69 @@ body{
 
 input{
     display: none;
+}
+
+input:checked + label{
+    background-color: #5D8BF4;
+}
+
+#seleccionar-ataque{
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton-de-ataque{
+    background-color: #11468f;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-color: transparent;
+    width: 100px;
+    font-family: 'Poppins',sans-serif;
+    color: white;
+    cursor: pointer;
+}
+
+#mensajes{
+    width: 280px;
+    background: #eeeeee84;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#boton-reiniciar{
+    border: transparent;
+    color: #11468f;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.ataques{
+    display: grid;
+    grid-template-columns: 100px 100px;
+}
+
+#vidas-jugador, #vidas-enemigo{
+    font-size: 32px;
+    margin-bottom: 0;
+}
+
+.ataques-jugador, .ataques-enemigo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* max-width desde 0 hasta 360px me voya ejecutar*/
+@media (max-width: 360px){
+    .tarjetas, .tarjetas-ataques{
+        flex-direction: column;
+    }
 }
