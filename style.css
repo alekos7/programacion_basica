@@ -60,3 +60,20 @@ body{
 input{
     display: none;
 }
+
+#seleccionar-ataque{
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton-de-ataque{
+    background-color: #11468f;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-color: transparent;
+    width: 100px;
+    font-family: 'Poppins',sans-serif;
+    color: white;
+    cursor: pointer;
+}
